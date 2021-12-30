@@ -1,0 +1,89 @@
+@charset "UFT-8";
+
+body {
+  background-color: #f4f1de;
+  color: #333;
+}
+.container {
+  width: 768px;
+  margin: 40px auto;
+  background-color: #81b29a;
+  border-radius: 20px;
+  padding: 40px 40px 80px;
+  position: relative;
+}
+.container::after {
+  content: "";
+  background: url(images/javascript.png) no-repeat;
+  background-size: contain;
+  display: block;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: -10px;
+  bottom: -90px;
+}
+.page_ttl {
+  text-align: center;
+  margin: 0 0 40px;
+  color: #FFF;
+  font-size: 24px;
+}
+.inner {
+  padding: 40px 60px;
+  background-color: #FFF;
+  border-radius: 20px;
+}
+h2 {
+  color: #81b29a;
+}
+
+/* Form Parts */
+.input_wrapper {
+  margin-bottom: 60px;
+}
+#inputField {
+  width: 18em;
+  border: solid 1px #999;
+  padding: 0.2em 0.5em;
+}
+.btn {
+  padding: 0.2em 1em;
+  border: solid 1px #CCC;
+  background-color: #EEE;
+  border-radius: 4px;
+  margin-left: 0.5em;
+}
+#outPutField {
+  text-align: right;
+  margin-bottom: 20px;
+}
+#keigen {
+  margin-bottom: 10px;
+}
+ol {
+  display: inline-block;
+}
+.kei {
+  background-color: #81b29a;
+  border-radius: 99999999px;
+  color: #FFF;
+  font-size: 0.8em;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-bottom;
+  margin-right: 0.4em;
+}
+#total {
+  text-align: right;
+}
+#total p {
+  font-size: 32px;
+  font-weight: bold;
+}
+#inputCount {
+  width: 2.5em;
+}

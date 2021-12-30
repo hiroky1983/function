@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>関数｜Javascript基礎実習</title>
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="page_ttl">関数</h1>
+    <div class="inner">
+      <div class="input_wrapper">
+        <p id="keigen"><label for="keigenCheck"><input type="checkbox" id="keigenCheck" class="keigen"> 軽減税率品</label></p>
+        <input type="text" name="inputField" id="inputField" placeholder="半角数字だけ：入力例）100000">
+        × <input type="number" id="inputCount" min="1" max="100" value="1">
+        <button class="btn" id="btn">追加</button>
+      </div>
+
+      <div id="outPutField">
+        <h2>お買い上げ(税込)</h2>
+        <ol>
+        </ol>
+      </div>
+      <!-- /#outPutField -->
+      <div id="total">
+        <h2>合計金額(税込)</h2>
+        <p>0</p>
+      </div>
+
+
+    </div>
+    <!-- /.inner -->
+  </div>
+  <!-- /.container -->
+
+<script src="./script.js"></script>
+</body>
+</html>
