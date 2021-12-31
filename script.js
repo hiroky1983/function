@@ -23,7 +23,6 @@ const btn = document.getElementById("btn");
 const outPutField = document.querySelector("#outPutField ol");
 //htmlの#total pを変数totalに代入
 const total = document.querySelector("#total p");
-
 /**
  * ====================
  *     初期値設定
@@ -42,7 +41,8 @@ let totalAmount = 0;
  * ==================================
  */
 function calcTax(price, tax) {
-  return Math.round(price + (price * tax) / 100);
+  const inputCountVal = inputCount.value;
+  return Math.round((price + (price * tax) / 100) * inputCountVal);
 }
 
 /**
@@ -58,14 +58,12 @@ function hankaku2Zenkaku(str) {
 
 /**
  * ==================================
- *      合計金額のアップデート用の関数
+ *  合計金額のアップデート用の関数
  * ==================================
  */
 function uppdateCalc(addList) {
   //合計金額に追加した商品金額を足す
-  addList.forEach((item) => {
-    totalAmount += item.price;
-  });
+  totalAmount += addList;
   //合計金額を更新
   total.innerHTML = totalAmount;
 }
@@ -73,7 +71,7 @@ function uppdateCalc(addList) {
 /**
  * ==================================
  *   関数の実行
- * 　軽減税率のcheckboxが変化したら
+ *   軽減税率のcheckboxが変化したら
  * ==================================
  */
 
@@ -97,11 +95,16 @@ keigen.addEventListener("change", () => {
 
 btn.addEventListener("click", () => {
   const inputText = document.getElementById("inputField").value;
-  const li = document.createElement("li");
-  const reslut = calcTax(parseInt(inputText), tax);
-  li.textContent = reslut;
-  outPutField.appendChild(li);
-  inputField.value = "";
-  uppdateCalc(reslut);
-  console.log(uppdateCalc(reslut));
+  if (!isNaN(inputText)) {
+    const li = document.createElement("li");
+    const reslut = calcTax(parseInt(inputText), tax);
+    li.textContent = reslut;
+    outPutField.appendChild(li);
+    inputField.value = "";
+    inputCount.value = 1;
+    uppdateCalc(reslut);
+  } else {
+    alert("半角数字を入力してください");
+    inputText = "";
+  }
 });
