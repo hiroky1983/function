@@ -102,6 +102,7 @@ btn.addEventListener("click", () => {
     outPutField.appendChild(li);
     inputField.value = "";
     inputCount.value = 1;
+    keigen.checked = false;
     uppdateCalc(reslut);
   } else {
     alert("半角数字を入力してください");
