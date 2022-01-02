@@ -95,15 +95,20 @@ keigen.addEventListener("change", () => {
 
 btn.addEventListener("click", () => {
   const inputText = document.getElementById("inputField").value;
-  if (!isNaN(inputText)) {
+  const inputA = hankaku2Zenkaku(inputText);
+  if (!isNaN(inputA)) {
     const li = document.createElement("li");
-    const reslut = calcTax(parseInt(inputText), tax);
-    li.textContent = reslut;
+    const resulut = calcTax(parseInt(inputA), tax);
+    if (keigen.checked) {
+      li.textContent = `${resulut}(軽)`;
+    } else {
+      li.textContent = resulut;
+    }
     outPutField.appendChild(li);
     inputField.value = "";
     inputCount.value = 1;
     keigen.checked = false;
-    uppdateCalc(reslut);
+    uppdateCalc(resulut);
   } else {
     alert("半角数字を入力してください");
     inputText = "";
